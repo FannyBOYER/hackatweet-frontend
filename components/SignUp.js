@@ -1,8 +1,13 @@
-import styles from '../styles/SignUp.module.css';
+  import styles from '../styles/SignUp.module.css';
 
-function SignUp () {
-    return(
+  function SignUp () {
+  return(
         <header className={styles.header}>
+            <div className={styles.Left}>
+            <img src="logotweeter.png" alt="logo" className={styles.logoLeft}/> 
+            <img src="loginImage.png" alt="image" className={styles.imageLeft}/>
+            </div> 
+
             <div>
             <img src="Logo Twitter.png" className={styles.logo} />
             </div>
@@ -13,7 +18,7 @@ function SignUp () {
             <input type="text" placeholder="Username" id="signUpUsername"/>
             <input type="password" placeholder="Password" id="signUpPassword"/>
             <button className={styles.btn1}>SignUp</button> 
-           
+            <button className={styles.btn2}>SignIn</button>
 		    </div>
         </header >
     )
