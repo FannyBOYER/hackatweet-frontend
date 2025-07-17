@@ -31,6 +31,11 @@ const handleSignUp = () => {
 
     return(
         <header className={styles.header}>
+            <div className={styles.Left}>
+            <img src="logotweeter.png" alt="logo" className={styles.logoLeft}/> 
+            <img src="loginImage.png" alt="image" className={styles.imageLeft}/>
+            </div> 
+
             <div>
             <img src="Logo Twitter.png" className={styles.logo} />
             </div>
