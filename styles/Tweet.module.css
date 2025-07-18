@@ -1,29 +1,31 @@
-.tweet {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  
-  .tweet .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-  
-  .tweet .name {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .tweet .message {
-    margin-bottom: 5px;
-  }
-  
-  .tweet .time {
-    font-size: 12px;
-    color: #999;
-  }
+.main{
+  padding: 10px;
+  border:1px solid #515b6a;
+
+}
+.tweet{
+  color: #DDD;
+}
+
+.bloc{
+  display:flex;
+  align-items: center;
+  padding:5px;
+}
+.name{
+  color: #DDD;
+  font-weight: bold;
+}
+.username , .time{
+  color:#515b6a;
+}
+.hashtag{
+  color:#1c67c3;
+}
+.icone , .image{
+  padding:5px;
+}
+.count{
+    color: #DDD;
+
+}
