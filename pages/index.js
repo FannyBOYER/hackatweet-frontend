@@ -8,4 +8,3 @@ function Index() {
 }
 
 export default Index;
-z

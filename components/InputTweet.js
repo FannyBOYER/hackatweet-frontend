@@ -1,12 +1,13 @@
 import styles from '../styles/InputTweet.module.css';
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 
 function InputTweet() {
   // zone txt + caractere limite
   const [tweet, setTweet] = useState('');
   const maxChars = 280;
-
+  const token = useSelector((state) => state.user.value.token)
  const handleChange = (e) => {
     const value = e.target.value;
 
@@ -18,8 +19,20 @@ function InputTweet() {
   
   // incorporer le fetch au moment du click d'envoi tweet
   const handleTweet = () => {
-    console.log('Tweet:', tweet);
-  setTweet ('');
+    if(!tweet.trim()) return; //vérifie si, après avoir supprimé les espaces, la chaîne est vide
+  
+    fetch('http://localhost:3000/tweets',{
+      method: 'POST',
+      body : JSON.stringify({message: tweet, token: token}),
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log('Réponse du serveur :', data);
+      setTweet('');
+    })
+    .catch((error) => {
+      console.error('Erreur réseau :', error);
+    })
   };
 
   const isValid = tweet.length > 0 && tweet.length <= maxChars;
