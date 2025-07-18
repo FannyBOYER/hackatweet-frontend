@@ -1,13 +1,7 @@
-import React from 'react';
-import styles from '../styles/Sign.module.css';
+import styles from '../styles/Login.module.css';
 import { login } from '../reducers/user';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
-
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
-
+import { useDispatch, useSelector } from 'react-redux';
 
 function SignUp() {
     
@@ -37,11 +31,7 @@ const handleSignUp = () => {
 };
 
     return( 
-        <div>
-            <span><FontAwesomeIcon icon={faXmark} className={styles.crossIcon}/></span>
-            <img src="Logo Twitter.png" className={styles.logo} />          
-            <h1 className = {styles.h1}> See What's happening</h1>
-            <h3 className= {styles.h3}>Join Hackatweet today.</h3>
+        <div>       
             <input type="text" placeholder='FirstName'id="signUpFirstName" onChange={(e) => setSignUpFirstname(e.target.value)} value={signUpFirstname} className={styles.inputStyle}/>
             <input type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setSignUpUsername(e.target.value)} value={signUpUsername} className={styles.inputStyle}/>
             <input type="password" placeholder="Password" id="signUpPassword" onChange={(e) => setSignUpPassword(e.target.value)} value={signUpPassword} className={styles.inputStyle}/>
