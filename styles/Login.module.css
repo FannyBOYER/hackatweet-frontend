@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #0a0720;
+  margin: 0;
+  padding: 0 20px;
+  margin-top:0%;
+ }
+
+.containerLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1da1f2;
+  width: 40%;
+  height: 100%; 
+  justify-content: left;
+  margin-left: 0;
+ } 
+
+ .logoLeft {
+  width: 300px;
+  height: 300px; 
+  transform: rotate(180deg);
+  position: absolute;
+  top: 30%;
+  
+}
+
+.imageLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%; 
+  justify-content: left;
+}
+
+.containerRight {
+  margin-top: 0%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 20px;
+  justify-content: left;
+  width: 60%;
+  border : 1px solid red;
+}
+
+.logoRight {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 50px;
+  transform: rotate(180deg);
+  align-items: left;
+  }
+
+.h1 {
+  font-family: "Mont-Heavy", sans-serif;
+  font-size: 80px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  margin-top: 5px;
+  }
+
+.h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  color: #ffffff;
+  }
+
+ .btn1, .btn2 {
+  padding: 10px 70px;
+  font-size: 18px;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: flex;
+}
+
+.btn2 {
+  background-color: #0a0720;
+  color: #1da1f2;
+  border: 1px solid #1da1f2;
+  margin-bottom: 50px;
+  
+}
+
+.p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.crossIcon {
+  cursor: pointer;
+  color: rgb(255, 0, 0);
+}
+
+.inputStyle {
+  border: white;
+  background-color:#15202b;
+  border-bottom: 1px solid #ffffff80;
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+  margin-bottom: 5px;
+  width: 60%;
+  outline: none;
+  color: #ffffff80;
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 50px;
+  transform: rotate(180deg);
+  align-items: center;
+
+  }

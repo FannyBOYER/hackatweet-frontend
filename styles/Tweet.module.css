@@ -1,0 +1,31 @@
+.main{
+  padding: 10px;
+  border:1px solid #515b6a;
+
+}
+.tweet{
+  color: #DDD;
+}
+
+.bloc{
+  display:flex;
+  align-items: center;
+  padding:5px;
+}
+.name{
+  color: #DDD;
+  font-weight: bold;
+}
+.username , .time{
+  color:#515b6a;
+}
+.hashtag{
+  color:#1c67c3;
+}
+.icone , .image{
+  padding:5px;
+}
+.count{
+    color: #DDD;
+
+}
