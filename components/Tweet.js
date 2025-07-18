@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons';
 //import { removeTweet,addTweet } from '../reducers/tweet';
 
+
 function Tweet(props) {
 
   const [likeTweet, setLikeTweet] = useState(0);
@@ -12,26 +13,7 @@ function Tweet(props) {
   //je sais pas la suite :(
 
   return (
-    <div className={styles.home}>
-        <div className={styles.newtweet}>
-          <input> What's Up</input> 
-          <p className={styles.compter}> .... /230</p>
-          <button>Tweet</button>
-        </div>
-        
-        <div className={styles.tweet}>
-          <img className={styles.avatar} src="avatar.jpg" alt="avatar"/>
-          <span className={styles.name}>{props.name}</span>
-          <span className={styles.username}>@ {props.username}</span>
-          <span className={styles.time}>  _ temps écoulé {props.time}</span>
-          <p className={styles.message}>{props.message}</p>
-        </div>
-    
-        <div className={styles.iconContainer}>
-          <span><FontAwesomeIcon icon={faHeart} onClick={() => handleLikeTweet()} style={heartIconStyle} className="like" /> ({likeCount})</span>
-          <span><FontAwesomeIcon icon={faTrash} onClick={() => handleRemove()} style={trashIconStyle} className="remove" /></span>
-        </div>
-      </div>
+    <p>Tweet</p>
   );
 }
 

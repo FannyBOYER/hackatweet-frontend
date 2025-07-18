@@ -6,6 +6,9 @@ import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+
+
 function SignUp() {
     
     const dispatch = useDispatch();

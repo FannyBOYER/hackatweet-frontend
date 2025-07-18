@@ -3,8 +3,7 @@ import styles from '../styles/Sign.module.css';
 import { login } from '../reducers/user';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
 
 function SignIn() {
         
