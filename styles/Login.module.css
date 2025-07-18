@@ -9,6 +9,7 @@
   padding: 0 20px;
   margin-top:0%;
  }
+
  .popover {
   width: 350px;
   height: 350px; 
@@ -16,23 +17,7 @@
   top: 10%;
  }
 
-  .h1 {
-  font-family: "Mont-Heavy", sans-serif;
-  font-size: 80px;
-  margin-bottom: 10px;
-  color: #ffffff;
-  margin-top: 20px;
-  }
-
-
-  .h2 {
-  font-size: 25px;
-  margin-bottom: 20px;
-  margin-top: 50px;
-  color: #ffffff;
-  }
-
-  .containerLeft {
+.containerLeft {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,9 +34,10 @@
   transform: rotate(180deg);
   position: absolute;
   top: 30%;
+  
 }
 
-  .imageLeft {
+.imageLeft {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,7 +46,7 @@
   justify-content: left;
 }
 
-  .containerRight {
+.containerRight {
   margin-top: 0%;
   display: flex;
   flex-direction: column;
@@ -70,43 +56,52 @@
   width: 40%;
 }
 
-  .logo {
+
+.logoRight {
   width: 50px;
   height: 50px;
   margin-bottom: 50px;
   transform: rotate(180deg);
   align-items: left;
+  }
 
+.h1 {
+  font-family: "Mont-Heavy", sans-serif;
+  font-size: 80px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  margin-top: 20px;
+  }
+
+.h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  color: #ffffff;
   }
 
 .btn1 {
-	padding: 10px 70px;
-	color: white;
-	font-size: 18px;
-	border-color: black;
-	border-width: 1px;
-	border-radius: 9999px;
-	background-color:#1da1f2;
-	height: 35px;
-	width: 250px;
-	margin-bottom: 10px;  
-	cursor: pointer;
-    margin-top: 10px;
+  padding: 10px 70px;
+  font-size: 18px;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .btn2 {
-	padding: 10px 70px;
-	color: rgb(0, 145, 255);
-	font-size: 18px;
-	border-color: white;
-	border-width: 1px;
-	border-radius: 9999px;
-	background-color:rgb(29, 35, 61);
-	height: 35px;
-	width: 250px;
-	margin-bottom: 10px;  
-	cursor: pointer;
-    margin-top: 10px;
+  padding: 10px 70px;
+  font-size: 18px;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .p {

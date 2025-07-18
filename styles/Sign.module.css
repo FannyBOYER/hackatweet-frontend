@@ -1,0 +1,75 @@
+.popover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  width: 350px;
+  background-color: #15202b;
+  border: 1px white solid;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: o;
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 50px;
+  transform: rotate(180deg);
+  align-items: center;
+  }
+
+.crossIcon {
+  cursor: pointer;
+  color: white;
+}
+
+.popoverContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn1 {
+  padding: 10px 70px;
+  font-size: 18px;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn2 {
+  padding: 10px 70px;
+  font-size: 18px;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.h2{
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+.inputStyle {
+  border: white;
+  background-color:#15202b;
+  border-bottom: 1px solid #ffffff80;
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+  margin-bottom: 5px;
+  width: 60%;
+  outline: none;
+  color: #ffffff80;
+}

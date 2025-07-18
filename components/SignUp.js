@@ -1,33 +1,50 @@
-import styles from '../styles/SignUp.module.css';
+import React from 'react';
+import styles from '../styles/Sign.module.css';
+import { login } from '../reducers/user';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function SignUp() {
-  return (
-            <div className={styles.container}>
-            <div className={styles.Left}>
-            <img src="Logo Twitter.png" className={styles.logoLeft}/> 
-            <img src="loginImage.png" alt="image" className={styles.imageLeft}/>
-            </div> 
+    
+    const dispatch = useDispatch();
 
-           <div className={styles.containerRight}> 
-            <div>
-            <img src="Logo Twitter.png" className={styles.logo} />
-            </div>
+    const [signUpFirstname, setSignUpFirstname] = useState('');
+    const [signUpUsername, setSignUpUsername] = useState('');
+	const [signUpPassword, setSignUpPassword] = useState('');
 
-            <div>
+    const user = useSelector(state => state.user.value)
+    console.log(user)
+
+const handleSignUp = () => {
+		fetch('http://localhost:3000/users/signup', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ name: signUpFirstname, password: signUpPassword, username: signUpUsername}),
+		}).then(response => response.json())
+			.then(data => {
+                if (data.result) {
+				    dispatch(login({ username: signUpUsername, token: data.token}));
+				    setSignUpUsername('');
+                    setSignUpFirstname('');
+				    setSignUpPassword(''); 
+			    }
+        });
+};
+
+    return( 
+        <div>
+            <span><FontAwesomeIcon icon={faXmark} className={styles.crossIcon}/></span>
+            <img src="Logo Twitter.png" className={styles.logo} />          
             <h1 className = {styles.h1}> See What's happening</h1>
             <h3 className= {styles.h3}>Join Hackatweet today.</h3>
-			<div> 
-            <input type="text" placeholder='FirstName'id="signUpFirstName"/>
-            <input type="text" placeholder="Username" id="signUpUsername"/>
-            <input type="password" placeholder="Password" id="signUpPassword"/>
-              <button className={styles.btn1} onClick={() => handleSignUp()}>Signup</button>
-              <p className={styles.p}>Already have an account?</p>
-              <button className={styles.btn2} onClick={() => handleSignIn()}>Signin</button>
-            </div>
+            <input type="text" placeholder='FirstName'id="signUpFirstName" onChange={(e) => setSignUpFirstname(e.target.value)} value={signUpFirstname} className={styles.inputStyle}/>
+            <input type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setSignUpUsername(e.target.value)} value={signUpUsername} className={styles.inputStyle}/>
+            <input type="password" placeholder="Password" id="signUpPassword" onChange={(e) => setSignUpPassword(e.target.value)} value={signUpPassword} className={styles.inputStyle}/>
+            <button className={styles.btn1} onClick={() => handleSignUp()}>SignUp</button> 
         </div>
-     </div>
-</div>
-  )
-};
+    )
+}
 
 export default SignUp;

@@ -1,13 +1,12 @@
 import '../styles/globals.css';
 import Head from 'next/head';
-import user from '../reducers/user'
-
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
+import  user from '../reducers/user';
 
 const store = configureStore({
   reducer: {user},
-})
+ });
 
 function App({ Component, pageProps }) {
   return (
@@ -16,7 +15,7 @@ function App({ Component, pageProps }) {
         <title>Next.js App</title>
       </Head>
       <Component {...pageProps} />
-    </Provider>
+      </Provider>
   );
 }
 
