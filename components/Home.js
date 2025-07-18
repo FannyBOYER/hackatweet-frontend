@@ -1,14 +1,52 @@
 import styles from '../styles/Home.module.css';
+import React, { useState } from 'react';
+
 
 function Home() {
+  // zone txt + caractere limite
+  const [tweet, setTweet] = useState('');
+  const maxChars = 280;
+
+ const handleChange = (e) => {
+    const value = e.target.value;
+
+ // Empêcher d'écrire au-delà de 280 chars même si on force avec copier/coller
+   if (value.length <= maxChars) {
+      setTweet(value);
+    }
+  };
+  
+  // incorporer le fetch au moment du click d'envoi tweet
+  const handleTweet = () => {
+    console.log('Tweet:', tweet);
+  setTweet ('');
+  };
+
+  const isValid = tweet.length > 0 && tweet.length <= maxChars;
+    
   return (
+    <div style={styles.container}>
+      {/* central panel*/}
     <div>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h2 style={styles.heading}>Home</h2>
+      <div style={styles.tweetBox}>
+        <textarea placeholder="What's Up" 
+        maxLength={maxChars}
+        value={tweet} 
+        onChange={handleChange}
+        style={styles.textarea}/>      
+      </div>
+      <div style={styles.footer}>
+        <span className={styles.counter}>{tweet.length}/{maxChars}</span>
+        <button onClick={handleTweet} style={{
+          ...styles.button}}>Tweet</button>
+      </div>
       </main>
     </div>
+    
+    
+  </div>
   );
 }
 
