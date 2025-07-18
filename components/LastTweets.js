@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { loadTweets , removeAllBookmark } from '../reducers/tweets';
+import { useEffect } from 'react';
+import { login } from '../reducers/user';
+
 
 import styles from '../styles/LastTweets.module.css';
 import Tweet from './Tweet';
@@ -20,50 +23,45 @@ function msToTime(time) {
     return `${hh}:${mm}:${ss}`;
 }
 
-
-
-
-
-
-
 function LastTweets() {
   const dispatch = useDispatch();
+  const token = useSelector((state) => state.user.value.token)
+  
 
-  fetch('http://localhost:3000/tweets/uzWRTZgKA47iEWq1k9OlQiOwkrtAOx7G')
-  .then(res=>res.json())
-  .then(data=>{
-    console.log(data);
-    dispatch(loadTweets(data));
-  })
+  useEffect(() => {
+    fetch(`http://localhost:3000/tweets/${token}`)
+      .then(res=>res.json())
+      .then(data=>{
+        dispatch(loadTweets(data));
+      })
+  }, []);
 
+ 
+  const tweets = useSelector((state) => state.tweets.value);
 
-	const tweets = useSelector((state) => state.tweets.value);
-  const tab = tweets.map(obj=>{
+	
+  const tabTwwets = tweets.map((obj,i)=>{
+    
     let props = {
       firstname: obj.firstname,
       username: obj.username,
-      time : msToTime(obj.date),
-
-
+      time : msToTime(obj.date),  
+      text: obj.text,
+      idTweet: obj.idTweet,
+      hashtag: obj.hashtag
     }
+    return  <Tweet key={i} {...props}/>
   })
-
-
-
-
-  console.log('etat global tweets : ' , tweets) 
-
-  let props = {name:'cricri'}
-  const t = [
-      <Tweet {...props}/>,
-      <Tweet {...props}/>,
-      <Tweet {...props}/>,
-  ];
-
-
+/*
+let p = {txt: 'tt'}
+let tabTwwets = [
+<Tweet key={0} {...p}/>,
+<Tweet key={1}{...p} />
+]
+*/
   return (
     <div>
-        {t}
+        {tabTwwets}
     </div>
   );
 }

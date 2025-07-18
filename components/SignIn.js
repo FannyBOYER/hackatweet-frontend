@@ -2,6 +2,8 @@ import styles from '../styles/Login.module.css';
 import { login } from '../reducers/user';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import router from 'next/router'
+
 
 function SignIn() {
         
@@ -22,6 +24,8 @@ function SignIn() {
 			.then(data => {
                 if (data.result) {
 				    dispatch(login({ username: signInUsername, token: data.token}));
+                    router.push('/')
+
                     setSignInUsername('');
 				    setSignInPassword(''); 
                     console.log(data.result)

@@ -15,11 +15,6 @@ function Tweet(props) {
   const [remove, setRemove] = useState();
 
   
-
-
-  const tweet = '';
-  const count = 10;
-
   return (
     <div className={styles.main}>
       <div className={styles.bloc}>
@@ -29,11 +24,11 @@ function Tweet(props) {
           <span className={styles.time}>{props.time}</span>
       </div>
       <div className={styles.tweet}>
-          <p>{tweet}</p>
+          <p>{props.text}</p>
       </div>
       <div className={styles.bloc}>
           <FontAwesomeIcon icon={faHeart} className={styles.icone} />
-          <span className={styles.count}>{count}</span>
+          <span className={styles.count}>{props.count}</span>
           <FontAwesomeIcon icon={faTrash}  style={{color:'white'}} className={styles.icone}/>
       </div>
     </div>
