@@ -1,9 +1,7 @@
-import React from 'react';
-import styles from '../styles/Sign.module.css';
+import styles from '../styles/Login.module.css';
 import { login } from '../reducers/user';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function SignIn() {
         
@@ -26,19 +24,18 @@ function SignIn() {
 				    dispatch(login({ username: signInUsername, token: data.token}));
                     setSignInUsername('');
 				    setSignInPassword(''); 
+                    console.log(data.result)
+
 			    }
         })
 };
 
     return( 
-            <div className={styles.container}>
-            <span><FontAwesomeIcon icon={faXmark} className={styles.crossIcon}/></span>
-            <img src='Logo Twitter.png' alt="logo" className={styles.logo}/>
-            <h2 className={styles.h2}>Connect to Hackatweet</h2>
+        <div>
             <input type="text" placeholder="Username" id="signInUsername" onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} className={styles.inputStyle}/>
             <input type="password" placeholder="Password" id="signInPassword" onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} className={styles.inputStyle}/>
-            <button className={styles.btn1} onClick={() => handleSignIn()}>SignIn</button> 
-		    </div>
+            <button className={styles.btn2} onClick={() => handleSignIn()}>SignIn</button> 
+		</div>
     )
 }
 
