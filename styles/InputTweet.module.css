@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.textarea {
+    border:1px solid white;
+    width:80%;
+    height:300px;
+    margin:20px;
+}
+.counter, .heading{
+    color:white;
+    margin:20px;
+}
+.footer{
+    text-align: center;
+
+}
+.button{
+    padding:5px;
+
+}

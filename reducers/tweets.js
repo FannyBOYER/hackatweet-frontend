@@ -9,7 +9,8 @@ export const tweetsSlice = createSlice({
   initialState,
   reducers: {
     loadTweets: (state, action) => {
-      state.value = action.payload ;
+  
+      state.value = action.payload.reverse() ;
     },
 
     removeAllBookmark: (state) => {

@@ -1,0 +1,5 @@
+.main {
+  height: 100vh;            /* Hauteur fixe pour déclencher le scroll */
+  overflow-y: scroll;       /* Scroll uniquement vertical */
+}
+

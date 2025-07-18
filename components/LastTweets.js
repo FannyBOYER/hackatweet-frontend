@@ -38,7 +38,6 @@ function LastTweets() {
 
  
   const tweets = useSelector((state) => state.tweets.value);
-
 	
   const tabTwwets = tweets.map((obj,i)=>{
     
@@ -52,15 +51,9 @@ function LastTweets() {
     }
     return  <Tweet key={i} {...props}/>
   })
-/*
-let p = {txt: 'tt'}
-let tabTwwets = [
-<Tweet key={0} {...p}/>,
-<Tweet key={1}{...p} />
-]
-*/
+
   return (
-    <div>
+    <div className={styles.main}>
         {tabTwwets}
     </div>
   );
