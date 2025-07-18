@@ -4,11 +4,6 @@ import { login } from '../reducers/user';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import { faXmark , faHeart } from '@fortawesome/free-solid-svg-icons';
-
-
 
 function SignIn() {
         
